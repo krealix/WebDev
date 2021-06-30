@@ -1,0 +1,54 @@
+﻿@model Magaz.Models.Device
+
+@{ ViewData["Title"] = "Details"; }
+
+
+    <div class="container">
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <section>
+            <div class="row">
+                <!-- ASIDE -->
+                <div class="col-md-5 col-lg-3">
+                    <div class="row">
+                        <!-- ASIDE #1 -->
+                        <aside class="col-sm-6 col-md-12 p-4">
+                               <img src="~/assets/images/Device/arctis.jpg" class="img-thumbnail" alt="...">
+                        </aside>
+                        <!-- ASIDE #2 -->
+                        <aside class="col-sm-6 col-md-12">
+                            Цена: @Html.DisplayFor(model => model.Cost) руб <br /><br />
+                            Страна: @Html.DisplayFor(model => model.Country.CountryName)<br /><br />
+                            Производитель: @Html.DisplayFor(model => model.Brand.BrandName)<br /><br />
+                            Тип: @Html.DisplayFor(model => model.DeviceTypes.TypeName)<br /><br />
+                            @if (Model.TypeId == 1)
+                                @await Html.PartialAsync("KeyboardType")
+                            else if (Model.TypeId == 2)
+                                @await Html.PartialAsync("MouseType")
+                            else if (Model.TypeId == 3)
+                                @await Html.PartialAsync("HeadphoneType")
+
+                        </aside>
+                    </div>
+                </div>
+                <!-- MAIN -->
+                <main class="col-md-7 col-lg-9 p-4">
+                    <h1 class="text-left text-uppercase">
+                        @Html.DisplayFor(model => model.Brand.BrandName)
+                    </h1>
+                    <h4 class="text-left">
+                        @Html.DisplayFor(model => model.Name)
+                    </h4>
+                    @Html.DisplayFor(model => model.Description)<br />
+                </main>
+            </div>
+        </section>
+    </div>
+<div class="mx-auto" style="width: 300px">
+    <a class="btn btn-outline-info" asp-action="Index">Вернуться</a>
+    @if (User.IsInRole("admin") || User.IsInRole("moderator"))
+    {
+<a class="btn btn-outline-info" asp-action="Update" asp-route-id="@Model.Id">Изменить</a>}
+    @if (User.IsInRole("admin"))
+    {
+<a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@Model.Id">Удалить</a>}
+</div>

@@ -1,0 +1,185 @@
+﻿@model Magaz.Models.ViewModels.DeviceVM
+
+<form method="post" asp-action="Update">
+    <input asp-for="Device.Id" hidden />
+    <div class="border p-3">
+
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Update Device</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Device.Name"></label>
+                        <input asp-for="Device.Name" class="form-control" />
+                        <span asp-validation-for="Device.Name" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Cost"></label>
+                        <input asp-for="Device.Cost" class="form-control" />
+                        <span asp-validation-for="Device.Cost" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Brand"></label>
+                        <select asp-for="Device.BrandId" asp-items="@Model.DDBrand" class="form-control">
+                            <option selected>--Select Brand--</option>
+                        </select>
+                        <span asp-validation-for="Device.BrandId" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Country"></label>
+                        <select asp-for="Device.CountryId" asp-items="@Model.DDCountry" class="form-control">
+                            <option selected>--Select Country--</option>
+                        </select>
+                        <span asp-validation-for="Device.CountryId" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.DeviceTypes"></label>
+                        <select asp-for="Device.TypeId" asp-items="@Model.DDType" class="form-control">
+                            <option selected>--Select Device Types--</option>
+                        </select>
+                        <span asp-validation-for="Device.TypeId" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Color"></label>
+                        <input asp-for="Device.Color" class="form-control" />
+                        <span asp-validation-for="Device.Color" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Buttons_Amounts"></label>
+                        <input asp-for="Device.Buttons_Amounts" class="form-control" />
+                        <span asp-validation-for="Device.Buttons_Amounts" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Type_Sensor"></label>
+                        <input asp-for="Device.Type_Sensor" class="form-control" />
+                        <span asp-validation-for="Device.Type_Sensor" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Sensor"></label>
+                        <input asp-for="Device.Sensor" class="form-control" />
+                        <span asp-validation-for="Device.Sensor" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.DPI"></label>
+                        <input asp-for="Device.DPI" class="form-control" />
+                        <span asp-validation-for="Device.DPI" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Material_M"></label>
+                        <input asp-for="Device.Material_M" class="form-control" />
+                        <span asp-validation-for="Device.Material_M" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Type_Connect"></label>
+                        <input asp-for="Device.Type_Connect" class="form-control" />
+                        <span asp-validation-for="Device.Type_Connect" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Weight_M"></label>
+                        <input asp-for="Device.Weight_M" class="form-control" />
+                        <span asp-validation-for="Device.Weight_M" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Type_Keyboard"></label>
+                        <input asp-for="Device.Type_Keyboard" class="form-control" />
+                        <span asp-validation-for="Device.Type_Keyboard" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Color_K"></label>
+                        <input asp-for="Device.Color_K" class="form-control" />
+                        <span asp-validation-for="Device.Color_K" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Buttons_Amount_K"></label>
+                        <input asp-for="Device.Buttons_Amount_K" class="form-control" />
+                        <span asp-validation-for="Device.Buttons_Amount_K" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Type_Connect_K"></label>
+                        <input asp-for="Device.Type_Connect_K" class="form-control" />
+                        <span asp-validation-for="Device.Type_Connect_K" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Material_K"></label>
+                        <input asp-for="Device.Material_K" class="form-control" />
+                        <span asp-validation-for="Device.Material_K" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Weight_K"></label>
+                        <input asp-for="Device.Weight_K" class="form-control" />
+                        <span asp-validation-for="Device.Weight_K" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Type_Connect_H"></label>
+                        <input asp-for="Device.Type_Connect_H" class="form-control" />
+                        <span asp-validation-for="Device.Type_Connect_H" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Sound"></label>
+                        <input asp-for="Device.Sound" class="form-control" />
+                        <span asp-validation-for="Device.Sound" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Color_H"></label>
+                        <input asp-for="Device.Color_H" class="form-control" />
+                        <span asp-validation-for="Device.Color_H" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Min_Frequency"></label>
+                        <input asp-for="Device.Min_Frequency" class="form-control" />
+                        <span asp-validation-for="Device.Min_Frequency" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Max_Frequency"></label>
+                        <input asp-for="Device.Max_Frequency" class="form-control" />
+                        <span asp-validation-for="Device.Max_Frequency" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Micro"></label>
+                        <input asp-for="Device.Micro" class="form-control" />
+                        <span asp-validation-for="Device.Micro" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Material_H"></label>
+                        <input asp-for="Device.Material_H" class="form-control" />
+                        <span asp-validation-for="Device.Material_H" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Device.Weight_H"></label>
+                        <input asp-for="Device.Weight_H" class="form-control" />
+                        <span asp-validation-for="Device.Weight_H" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <label asp-for="Device.Description"></label>
+                        <div class="input-group">
+                            <span class="input-group-text">С текстовым полем</span>
+                            <textarea asp-for="Device.Description" class="form-control" aria-label="С текстовым полем"></textarea>
+                            <span asp-validation-for="Device.Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-info w-75" value="create" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-danger w-75">Back</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
